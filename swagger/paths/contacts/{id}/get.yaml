@@ -33,5 +33,7 @@ responses:
             data:
               type: object
               $ref: '../../../components/shemas/contact.yaml'
-  400:
+  401:
     $ref: '../../../components/responses/401.yaml'
+  404:
+    $ref: ../../../components/responses/404.yaml
