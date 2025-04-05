@@ -23,6 +23,10 @@ requestBody:
             description: "Contact's phohe number"
             type: string
             example: '+380674376978'
+          email:
+            description: 'Contact email'
+            type: string
+            example: example@gmail.com
           contactType:
             description: 'What number is this'
             type: string
@@ -35,6 +39,7 @@ requestBody:
             description: "Link to student's photo"
             type: string
             example: 'https://res.cloudinary.com/uqwgdu/image/upload/image.png'
+            format: binary
 responses:
   '201':
     description: 'Create a contact'
@@ -56,5 +61,7 @@ responses:
             data:
               type: object
               $ref: '../../components/shemas/contact.yaml'
-  401:
+  '401':
     $ref: '../../components/responses/401.yaml'
+  '400':
+    $ref: '../../components/responses/400.yaml'

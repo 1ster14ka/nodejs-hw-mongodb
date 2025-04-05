@@ -2,19 +2,19 @@
   "openapi": "3.1.0",
   "info": {
     "version": "1.0.0",
-    "title": "Students app",
+    "title": "Contacts app",
     "license": {
       "name": "Apache 2.0",
       "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "description": "This is a documentation of students app"
+    "description": "This is a documentation of contacts app"
   },
   "servers": [
     {
-      "url": "http://localhost:3000"
+      "url": "https://contacts-app-to8e.onrender.com"
     },
     {
-      "url": "https://example.com/api/v1"
+      "url": "http://localhost:3000"
     }
   ],
   "tags": [
@@ -209,6 +209,11 @@
                     "type": "string",
                     "example": "+380674376978"
                   },
+                  "email": {
+                    "description": "Contact email",
+                    "type": "string",
+                    "example": "example@gmail.com"
+                  },
                   "contactType": {
                     "description": "What number is this",
                     "type": "string",
@@ -226,7 +231,8 @@
                   "photo": {
                     "description": "Link to student's photo",
                     "type": "string",
-                    "example": "https://res.cloudinary.com/uqwgdu/image/upload/image.png"
+                    "example": "https://res.cloudinary.com/uqwgdu/image/upload/image.png",
+                    "format": "binary"
                   }
                 }
               }
@@ -262,6 +268,9 @@
                 }
               }
             }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
           },
           "401": {
             "$ref": "#/components/responses/401"
@@ -310,6 +319,11 @@
                     "description": "Contact's phone number",
                     "type": "string",
                     "example": "+380674376978"
+                  },
+                  "email": {
+                    "description": "Contact email",
+                    "type": "string",
+                    "example": "example@gmail.com"
                   },
                   "contactType": {
                     "description": "What number is this",
@@ -377,7 +391,7 @@
       },
       "delete": {
         "tags": [
-          "contacts"
+          "Contacts"
         ],
         "summary": "Delete contact",
         "operationId": "deleteContact",
@@ -401,6 +415,9 @@
         "responses": {
           "204": {
             "description": "Contact successfully deleted"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
           },
           "404": {
             "$ref": "#/components/responses/404"
@@ -460,8 +477,11 @@
               }
             }
           },
-          "400": {
+          "401": {
             "$ref": "#/components/responses/401"
+          },
+          "404": {
+            "$ref": "#/components/responses/404"
           }
         }
       }
@@ -499,6 +519,11 @@
             "type": "string",
             "example": "+380674376978"
           },
+          "email": {
+            "description": "Contact email",
+            "type": "string",
+            "example": "example@gmail.com"
+          },
           "contactType": {
             "description": "What number is this",
             "type": "string",
@@ -517,6 +542,11 @@
             "description": "Link to student's photo",
             "type": "string",
             "example": "https://res.cloudinary.com/uqwgdu/image/upload/image.png"
+          },
+          "userId": {
+            "description": "Unique identifier",
+            "type": "string",
+            "example": "65e4decdd286b30065d54af9"
           }
         }
       }
