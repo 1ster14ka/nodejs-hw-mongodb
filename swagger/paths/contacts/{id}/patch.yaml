@@ -28,6 +28,10 @@ requestBody:
             description: "Contact's phone number"
             type: string
             example: '+380674376978'
+          email:
+            description: 'Contact email'
+            type: string
+            example: example@gmail.com
           contactType:
             description: 'What number is this'
             type: string

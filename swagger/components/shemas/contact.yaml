@@ -17,6 +17,10 @@ properties:
     description: "Contact's phone number"
     type: string
     example: '+380674376978'
+  email:
+    description: 'Contact email'
+    type: string
+    example: example@gmail.com
   contactType:
     description: 'What number is this'
     type: string
@@ -29,3 +33,7 @@ properties:
     description: "Link to student's photo"
     type: string
     example: https://res.cloudinary.com/uqwgdu/image/upload/image.png
+  userId:
+    description: 'Unique identifier'
+    type: string
+    example: 65e4decdd286b30065d54af9
